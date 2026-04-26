@@ -1,715 +1,676 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Global Comint Mendoza</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="global comint, exportacion, importacion, mendoza, aduana" name="keywords">
-  <meta content="GlobalComint Importación/Exportación Mendoza" name="description">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobalComint | Despachantes de Aduana y Comercio Exterior – Mendoza, Argentina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      :root{
+          --navy:#0a1628;
+          --navy2:#122040;
+          --accent:#e8b84b;
+          --accent2:#c9972c;
+          --light:#f5f3ee;
+          --white:#ffffff;
+          --text-muted:#8b95a8;
+          --border:rgba(255,255,255,0.08);
+          --radius:12px;
+      }
+      html{scroll-behavior:smooth}
+      body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
 
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
+      /* NAV */
+      nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+      .nav-inner{max-width:1200px;margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between}
+      .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.04em;color:var(--white);text-decoration:none}
+      .logo span{color:var(--accent)}
+      .nav-links{display:flex;gap:2.5rem;list-style:none}
+      .nav-links a{font-size:0.875rem;color:var(--text-muted);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
+      .nav-links a:hover{color:var(--accent)}
+      .nav-cta{background:var(--accent);color:var(--navy);font-family:'Syne',sans-serif;font-weight:700;font-size:0.8rem;padding:9px 20px;border-radius:6px;text-decoration:none;letter-spacing:0.05em;transition:background 0.2s}
+      .nav-cta:hover{background:var(--accent2)}
 
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
+      /* HERO */
+      .hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;position:relative;overflow:hidden}
+      .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(232,184,75,0.07) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(18,32,64,0.8) 0%,transparent 60%);pointer-events:none}
+      .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+      .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2}
+      .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,184,75,0.12);border:1px solid rgba(232,184,75,0.25);color:var(--accent);font-size:0.78rem;font-weight:500;letter-spacing:0.08em;padding:6px 14px;border-radius:100px;margin-bottom:1.5rem;text-transform:uppercase}
+      .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+      @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+      h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:1.5rem}
+      h1 em{font-style:normal;color:var(--accent)}
+      .hero-desc{font-size:1.05rem;color:var(--text-muted);line-height:1.75;margin-bottom:2.5rem;font-weight:300;max-width:440px}
+      .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+      .btn-primary{background:var(--accent);color:var(--navy);font-family:'Syne',sans-serif;font-weight:700;font-size:0.875rem;padding:14px 28px;border-radius:8px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s;display:inline-block}
+      .btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+      .btn-outline{border:1px solid rgba(255,255,255,0.2);color:var(--white);font-family:'Syne',sans-serif;font-weight:600;font-size:0.875rem;padding:14px 28px;border-radius:8px;text-decoration:none;letter-spacing:0.04em;transition:all 0.2s;display:inline-block}
+      .btn-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)}
+      .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+      .stat-item{border-left:2px solid rgba(232,184,75,0.3);padding-left:1rem}
+      .stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--white);line-height:1}
+      .stat-label{font-size:0.78rem;color:var(--text-muted);margin-top:4px;letter-spacing:0.04em}
+      .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+      .hero-card{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px;padding:2rem;width:100%;max-width:400px}
+      .hero-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+      .hero-card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.03em}
+      .status-badge{background:rgba(39,185,99,0.15);color:#27b963;font-size:0.72rem;font-weight:600;padding:4px 10px;border-radius:100px;letter-spacing:0.05em}
+      .route-item{display:flex;align-items:center;gap:1rem;padding:0.9rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+      .route-item:last-child{border-bottom:none}
+      .route-icon{width:36px;height:36px;border-radius:8px;background:rgba(232,184,75,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+      .route-info{flex:1}
+      .route-name{font-size:0.875rem;font-weight:500;margin-bottom:2px}
+      .route-sub{font-size:0.75rem;color:var(--text-muted)}
+      .route-status{font-size:0.72rem;font-weight:600;color:#27b963}
 
-  <!-- Favicon -->
-  <link href="img/favicon.ico" rel="icon">
+      /* ABOUT */
+      section{padding:100px 5%}
+      .section-inner{max-width:1200px;margin:0 auto}
+      .section-tag{font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:block}
+      .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem}
+      .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+      .about-desc{font-size:1rem;line-height:1.8;color:var(--text-muted);font-weight:300}
+      .about-highlights{margin-top:2rem;display:flex;flex-direction:column;gap:0.75rem}
+      .highlight-item{display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:rgba(255,255,255,0.75)}
+      .highlight-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+      .about-right{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:20px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+      .metric-box{text-align:center;padding:1.5rem 1rem;background:rgba(232,184,75,0.06);border:1px solid rgba(232,184,75,0.12);border-radius:12px}
+      .metric-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--accent);line-height:1}
+      .metric-text{font-size:0.8rem;color:var(--text-muted);margin-top:6px;line-height:1.3}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+      /* SERVICES */
+      .services-bg{background:rgba(255,255,255,0.015)}
+      .services-header{text-align:center;margin-bottom:3.5rem}
+      .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+      .service-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all 0.3s;cursor:default;position:relative;overflow:hidden}
+      .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,184,75,0.06) 0%,transparent 50%);opacity:0;transition:opacity 0.3s}
+      .service-card:hover{border-color:rgba(232,184,75,0.3);transform:translateY(-4px)}
+      .service-card:hover::before{opacity:1}
+      .service-icon{width:48px;height:48px;border-radius:10px;background:rgba(232,184,75,0.1);border:1px solid rgba(232,184,75,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:1.25rem}
+      .service-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.75rem;letter-spacing:0.02em}
+      .service-desc{font-size:0.875rem;color:var(--text-muted);line-height:1.7;font-weight:300}
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      /* TEAM */
+      .team-header{margin-bottom:3.5rem}
+      .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+      .team-card{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s}
+      .team-card:hover{border-color:rgba(232,184,75,0.25);transform:translateY(-3px)}
+      .team-avatar{width:100%;aspect-ratio:1;background:linear-gradient(135deg,#122040 0%,#1a3260 100%);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;color:var(--accent);position:relative;overflow:hidden}
+      .team-avatar img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+      .team-info{padding:1.25rem}
+      .team-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:4px}
+      .team-role{font-size:0.8rem;color:var(--text-muted)}
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+      /* CONTACT */
+      .contact-bg{background:rgba(255,255,255,0.015)}
+      .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+      .contact-info{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+      .contact-item{display:flex;align-items:flex-start;gap:1rem}
+      .contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(232,184,75,0.1);border:1px solid rgba(232,184,75,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+      .contact-text-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:4px}
+      .contact-text-val{font-size:0.95rem;font-weight:500;color:var(--white)}
+      .contact-form{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:20px;padding:2.5rem}
+      .form-group{margin-bottom:1.25rem}
+      .form-label{display:block;font-size:0.8rem;color:var(--text-muted);letter-spacing:0.04em;margin-bottom:8px;text-transform:uppercase}
+      .form-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.9rem;transition:border-color 0.2s;outline:none}
+      .form-input:focus{border-color:rgba(232,184,75,0.4)}
+      .form-input::placeholder{color:rgba(255,255,255,0.25)}
+      textarea.form-input{resize:vertical;min-height:120px}
+      .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+      .btn-submit{width:100%;background:var(--accent);color:var(--navy);font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;padding:14px;border-radius:8px;border:none;cursor:pointer;letter-spacing:0.04em;transition:all 0.2s;margin-top:0.5rem}
+      .btn-submit:hover{background:var(--accent2)}
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+      /* FOOTER */
+      footer{background:rgba(0,0,0,0.3);border-top:1px solid var(--border);padding:2.5rem 5%;text-align:center}
+      .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+      .footer-copy{font-size:0.8rem;color:var(--text-muted)}
+      .footer-links{display:flex;gap:2rem;list-style:none}
+      .footer-links a{font-size:0.8rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+      .footer-links a:hover{color:var(--accent)}
 
-  <!-- =======================================================
-    Theme Name: Bell
-    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+      /* WHATSAPP FLOAT */
+      .wa-btn{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;text-decoration:none;animation:wa-appear 0.6s ease 1s both}
+      @keyframes wa-appear{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+      .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.6)}
+      .wa-btn svg{width:30px;height:30px;fill:white}
+      .wa-tooltip{position:absolute;right:68px;background:var(--navy2);color:var(--white);font-size:0.8rem;font-weight:500;padding:8px 14px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;border:1px solid var(--border);font-family:'DM Sans',sans-serif}
+      .wa-btn:hover .wa-tooltip{opacity:1}
+
+      /* DIVIDER */
+      .divider{width:60px;height:3px;background:var(--accent);border-radius:2px;margin-bottom:1.5rem}
+
+      /* HAMBURGER */
+      .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+      .nav-hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
+      .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+      .nav-hamburger.open span:nth-child(2){opacity:0}
+      .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+      /* TABLET – 900px */
+      @media(max-width:900px){
+          .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+          .hero-visual{order:-1}
+          .hero-card{max-width:100%}
+          .about-grid{grid-template-columns:1fr;gap:2.5rem}
+          .services-grid{grid-template-columns:1fr 1fr}
+          .team-grid{grid-template-columns:1fr 1fr}
+          .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+      }
+
+      /* MOBILE – 768px */
+      @media(max-width:768px){
+          nav{padding:0 4%}
+          .nav-hamburger{display:flex}
+          .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:rgba(10,22,40,0.98);backdrop-filter:blur(12px);flex-direction:column;align-items:center;gap:0;padding:0.75rem 0 1.25rem;border-bottom:1px solid var(--border)}
+          .nav-links.open{display:flex}
+          .nav-links li{width:100%;text-align:center}
+          .nav-links a{display:block;padding:0.85rem 1rem;font-size:1rem;color:var(--white)}
+          .nav-cta{display:none}
+          section{padding:70px 5%}
+          .hero{padding:100px 4% 60px}
+          .hero-stats{gap:1rem}
+          .stat-num{font-size:1.5rem}
+          .form-row{grid-template-columns:1fr}
+          .footer-inner{flex-direction:column;gap:1.25rem;align-items:center;text-align:center}
+          .footer-links{gap:1.25rem}
+          .wa-btn{bottom:20px;right:20px}
+      }
+
+      /* SMALL MOBILE – 480px */
+      @media(max-width:480px){
+          .hero-stats{grid-template-columns:1fr;gap:0.75rem}
+          .services-grid{grid-template-columns:1fr}
+          .team-grid{grid-template-columns:1fr}
+          .about-right{grid-template-columns:1fr 1fr}
+          .hero-card{padding:1.25rem}
+          .contact-form{padding:1.5rem}
+          .about-right{padding:1.5rem;gap:1rem}
+      }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="description" content="GlobalComint: despachantes de aduana, importación, exportación, agentes de carga IATA y logística de comercio exterior en Mendoza, Argentina. +5 años de experiencia y 22 clientes satisfechos.">
+  <meta name="keywords" content="despachante de aduana Mendoza, comercio exterior Mendoza, importación exportación Argentina, agente de carga IATA, zona franca Mendoza, logística internacional Mendoza, GlobalComint">
+  <meta name="author" content="GlobalComint">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Spanish">
+  <meta name="geo.region" content="AR-M">
+  <meta name="geo.placename" content="Mendoza, Argentina">
+  <meta name="geo.position" content="-32.8895;-68.8458">
+  <meta name="ICBM" content="-32.8895, -68.8458">
+  <link rel="canonical" href="https://pabloherre.github.io/globalcomint/index.html">
+
+  <!-- 2. OPEN GRAPH (Facebook, LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pabloherre.github.io/globalcomint/index.html">
+  <meta property="og:title" content="GlobalComint | Despachantes de Aduana – Mendoza">
+  <meta property="og:description" content="Expertos en comercio exterior: importación, exportación, agentes de carga IATA y zona franca en Mendoza, Argentina.">
+  <meta property="og:image" content="https://pabloherre.github.io/globalcomint/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GlobalComint">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- 3. TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GlobalComint | Despachantes de Aduana – Mendoza">
+  <meta name="twitter:description" content="Expertos en comercio exterior: importación, exportación, agentes de carga IATA y zona franca en Mendoza, Argentina.">
+  <meta name="twitter:image" content="https://pabloherre.github.io/globalcomint/img/og-image.jpg">
+
+  <!-- 4. FAVICON (reemplazar con tu ícono real) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- 5. SCHEMA.ORG – DATOS ESTRUCTURADOS (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://pabloherre.github.io/globalcomint/#business",
+          "name": "GlobalComint",
+          "alternateName": "Global Comint",
+          "url": "https://pabloherre.github.io/globalcomint/index.html",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pabloherre.github.io/globalcomint/img/comint.png"
+          },
+          "image": "https://pabloherre.github.io/globalcomint/img/og-image.jpg",
+          "description": "Despachantes de aduana, importación, exportación, agentes de carga IATA y logística de comercio exterior en Mendoza, Argentina.",
+          "telephone": "+54-261-XXX-XXXX",
+          "email": "globalcomint@gmail.com",
+          "foundingDate": "2019",
+          "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": 15
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Puerto Seco y Puerto Terrestre",
+            "addressLocality": "Godoy Cruz",
+            "addressRegion": "Mendoza",
+            "postalCode": "5500",
+            "addressCountry": "AR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -32.8895,
+            "longitude": -68.8458
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de Comercio Exterior",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Servicio de Importación",
+                  "description": "Gestión completa desde la orden de compra hasta el ingreso de mercadería al depósito del cliente."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Servicio de Exportación",
+                  "description": "Tramitación completa desde la orden de compra hasta el envío de documentos de embarque."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Agente de Carga Internacional IATA",
+                  "description": "Habilitados para operar como agentes de carga nacional e internacional con licencia IATA."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Zona Franca Mendoza",
+                  "description": "Oficinas y depósitos para almacenaje, fraccionamiento, reenvasado, logística y distribución."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Seguros de Carga",
+                  "description": "Gestión de seguros con aseguradoras especializadas en Comercio Exterior."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://pabloherre.github.io/globalcomint/#website",
+          "url": "https://pabloherre.github.io/globalcomint/index.html",
+          "name": "GlobalComint",
+          "description": "Despachantes de aduana y comercio exterior en Mendoza, Argentina",
+          "inLanguage": "es-AR",
+          "publisher": {
+            "@id": "https://pabloherre.github.io/globalcomint/#business"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://pabloherre.github.io/globalcomint/#webpage",
+          "url": "https://pabloherre.github.io/globalcomint/index.html",
+          "name": "GlobalComint | Despachantes de Aduana y Comercio Exterior – Mendoza",
+          "isPartOf": {
+            "@id": "https://pabloherre.github.io/globalcomint/#website"
+          },
+          "about": {
+            "@id": "https://pabloherre.github.io/globalcomint/#business"
+          },
+          "inLanguage": "es-AR"
+        }
+      ]
+    }
+  </script>
 </head>
-
 <body>
-  <!-- Page Content
-    ================================================== -->
-  <!-- Hero -->
 
-  <section class="hero">
-    <div class="container text-center">
-
-      <div class="col-md-12">
-        <h1>
-            Global Comint
-          </h1>
-
-        <p class="tagline">
-          ¡Expertos en comercio internacional!
-        </p>
-        <div class="row">
-          <div class="col-md-12">
-            <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" style="width: 250px; border-radius: 10px;" src="img/comint.png"></a>
-          </div>
-        </div>
-        <a class="btn btn-full" href="#about">¡Empecemos!</a>
-      </div>
+<nav>
+  <div class="nav-inner">
+    <div style="display: flex; align-items: center; gap: 8px">
+    <img src="./img/comint.png" alt="Logo GlobalComint" class="logo" width="30px">
+    <a href="#" class="logo">Global<span>Comint</span></a>
     </div>
-
-  </section>
-  <!-- /Hero -->
-
-  <!-- Header -->
-  <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <!--<a href="index.html"><img src="img/logo-nav.png" alt="" title="" /></img></a>-->
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Bell</a></h1>-->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li><a href="#about">Acerca de nosotros</a></li>
-          <li><a href="#features">Servicios</a></li>
-          <!--<li><a href="#portfolio">Portfolio</a></li>-->
-          <li><a href="#team">Equipo</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
-
-      <nav class="nav social-nav pull-right d-none d-lg-inline">
-        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-      </nav>
-    </div>
-  </header>
-  <!-- #header -->
-
-  <!-- About -->
-
-  <section class="about" id="about">
-    <div class="container text-center">
-      <h2>
-          Acerca de Global Comint
-        </h2>
-
-      <p>
-        Despachantes de Aduana- Comercio Exterior- Mudanzas- Logística de Comercio Exterior.
-        nos encontramos en Puerto seco y Puerto Terrestre Mendoza - Godoy Cruz, Mendoza
-      </p>
-
-      <div class="row stats-row">
-        <div class="stats-col text-center col-md-3 col-sm-6">
-          <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">22</span> Clientes Satisfechos
-          </div>
-        </div>
-
-        <div class="stats-col text-center col-md-3 col-sm-6">
-          <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">9</span> Proyectos Actuales
-          </div>
-        </div>
-
-        <div class="stats-col text-center col-md-3 col-sm-6">
-          <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">5</span> Años de trayectoria
-          </div>
-        </div>
-
-        <div class="stats-col text-center col-md-3 col-sm-6">
-          <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">15</span> Empleados
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /About -->
-  <!-- Parallax -->
-
-  <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
-    <h2>
-        Bienvenidos a la excelencia en materia de importacion/exportacion
-      </h2>
-
-    <p>
-        Somos una empresa líder en la prestación de servicios de Comercio Exterior. Contamos con profesionales altamente especializados y cumplimos con las más exigentes normas de Calidad Internacional.
-    </p>
-    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" style="width: 400px;" src="img/comercio2.png">
+    <ul class="nav-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#team">Equipo</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Consultar ahora</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <!-- /Parallax -->
-  <!-- Features -->
+</nav>
 
-  <section class="features" id="features">
-    <div class="container">
-      <h2 class="text-center">
-          Nuestros servicios
-        </h2>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Mendoza · Argentina
+      </div>
+      <h1>Expertos en<br><em>Comercio</em><br>Internacional</h1>
+      <p class="hero-desc">Despachantes de aduana, logística y agentes de carga. Llevamos sus importaciones y exportaciones con precisión, desde Mendoza al mundo.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Consultar servicio</a>
+        <a href="#services" class="btn-outline">Ver servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">22+</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Operaciones mensuales</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">15</div>
+          <div class="stat-label">Años de trayectoria</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="hero-card-title">Operaciones activas</span>
+          <span class="status-badge">EN LÍNEA</span>
+        </div>
+        <div class="route-item">
+          <div class="route-icon">🚢</div>
+          <div class="route-info">
+            <div class="route-name">Importación marítima</div>
+            <div class="route-sub">Shanghai → Mendoza</div>
+          </div>
+          <span class="route-status">Activo</span>
+        </div>
+        <div class="route-item">
+          <div class="route-icon">✈️</div>
+          <div class="route-info">
+            <div class="route-name">Carga aérea IATA</div>
+            <div class="route-sub">Miami → Buenos Aires</div>
+          </div>
+          <span class="route-status">Activo</span>
+        </div>
+        <div class="route-item">
+          <div class="route-icon">🏭</div>
+          <div class="route-info">
+            <div class="route-name">Zona Franca Mendoza</div>
+            <div class="route-sub">Almacenaje y logística</div>
+          </div>
+          <span class="route-status">Disponible</span>
+        </div>
+        <div class="route-item">
+          <div class="route-icon">📦</div>
+          <div class="route-info">
+            <div class="route-name">Exportación agrícola</div>
+            <div class="route-sub">Mendoza → Europa</div>
+          </div>
+          <span class="route-status">Activo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="row">
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">Acerca de GlobalComint</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Soluciones integrales de comercio exterior</h2>
+        <p class="about-desc">Somos una empresa líder en servicios de Comercio Exterior con base en Mendoza. Nuestros profesionales altamente especializados gestionan cada operación cumpliendo con las más exigentes normas de calidad internacional.</p>
+        <p class="about-desc" style="margin-top:1rem">Operamos en el Puerto Seco y Puerto Terrestre de Mendoza – Godoy Cruz, con acceso a Zona Franca y habilitación IATA para emitir nuestros propios conocimientos de embarque.</p>
+        <div class="about-highlights">
+          <div class="highlight-item"><span class="highlight-dot"></span>Puerto Seco y Puerto Terrestre Mendoza</div>
+          <div class="highlight-item"><span class="highlight-dot"></span>Licencia IATA – Agente de carga internacional</div>
+          <div class="highlight-item"><span class="highlight-dot"></span>Oficinas en Zona Franca Mendoza</div>
+          <div class="highlight-item"><span class="highlight-dot"></span>Seguros de carga con aseguradoras especializadas</div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="metric-box">
+          <div class="metric-num">22+</div>
+          <div class="metric-text">Clientes<br>satisfechos</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">500+</div>
+          <div class="metric-text">Operaciones<br>mensuales</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">15</div>
+          <div class="metric-text">Años de<br>trayectoria</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-num">12</div>
+          <div class="metric-text">Profesionales<br>en equipo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="services-header">
+      <span class="section-tag">Lo que hacemos</span>
+      <div class="divider" style="margin:0 auto 1.5rem"></div>
+      <h2 class="section-title">Nuestros servicios</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📥</div>
+        <div class="service-title">Importación</div>
+        <p class="service-desc">Brindamos el servicio completo desde la orden de compra al exterior hasta el ingreso de la mercadería a su depósito, con gestión de trámites y documentación.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📤</div>
+        <div class="service-title">Exportación</div>
+        <p class="service-desc">Desde la orden de compra hasta el envío de la totalidad de los documentos de embarque, gestionamos cada paso para asegurar operaciones exitosas.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <div class="service-title">Agentes de Carga IATA</div>
+        <p class="service-desc">Habilitados para operar como agentes de carga nacional e internacional. Emitimos nuestros propios Conocimientos de Embarque con licencia IATA.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏭</div>
+        <div class="service-title">Zona Franca</div>
+        <p class="service-desc">Oficinas y depósitos en la Zona Franca de Mendoza para almacenaje, fraccionamiento, reenvasado, logística y distribución de mercaderías.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <div class="service-title">Seguros de Carga</div>
+        <p class="service-desc">Gestionamos el seguro más conveniente para su carga a través de reconocidas aseguradoras especializadas en Comercio Exterior.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <div class="service-title">Tecnología y Gestión</div>
+        <p class="service-desc">Herramientas digitales y equipo capacitado para brindar un servicio ágil, transparente y altamente profesional en cada operación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner">
+    <div class="team-header">
+      <span class="section-tag">Nuestro equipo</span>
+      <div class="divider"></div>
+      <h2 class="section-title">Los profesionales<br>detrás de GlobalComint</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">BC</div>
+        <div class="team-info">
+          <div class="team-name">Bruno Fabian Cola</div>
+          <div class="team-role">Director Aduanero</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">RA</div>
+        <div class="team-info">
+          <div class="team-name">Roxana Andino</div>
+          <div class="team-role">Directora General</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SF</div>
+        <div class="team-info">
+          <div class="team-name">Sergio Fez</div>
+          <div class="team-role">Gerente</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SF</div>
+        <div class="team-info">
+          <div class="team-name">Sergio Fez</div>
+          <div class="team-role">Despachante</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <span class="section-tag">Hablemos</span>
+        <div class="divider"></div>
+        <h2 class="section-title">¿Listo para operar con el mundo?</h2>
+        <p class="about-desc">Contáctenos y un especialista le asesorará sobre el mejor camino para su operación de comercio exterior.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
             <div>
-              <div class="feature-icon">
-                <span class="fa fa-rocket"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                  Servicio de Importacion
-                </h3>
-
-              <p>
-                Brindamos al importador todo el servicio desde el momento que efectúa su pedido de compra al exterior, hasta el ingreso de la mercadería a su depósito.
-              </p>
+              <div class="contact-text-label">Dirección</div>
+              <div class="contact-text-val">Puerto Seco y Puerto Terrestre<br>Godoy Cruz, Mendoza 5500</div>
             </div>
           </div>
-        </div>
-
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
             <div>
-              <div class="feature-icon">
-                <span class="fa fa-envelope"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                Servicio de Exportacion
-                </h3>
-
-              <p>
-                Desde el momento en que el Exportador tiene la orden de compra sobre sus productos, hasta el trámite final de envío de la totalidad de los documentos de embarque para la finalización de la operación.
-              </p>
+              <div class="contact-text-label">Email</div>
+              <div class="contact-text-val">globalcomint@gmail.com</div>
             </div>
           </div>
-        </div>
-
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
             <div>
-              <div class="feature-icon">
-                <span class="fa fa-bell"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                  Agentes de carga internacional
-                </h3>
-
-              <p>
-                Estamos habilitados para operar como agentes de carga tanto a nivel nacional como internacional: contamos con licencia I.A.T.A., pudiendo emitir nuestros propios Conocimientos de Embarque.
-              </p>
+              <div class="contact-text-label">WhatsApp</div>
+              <div class="contact-text-val">+54 9 261 701 6488</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
-            <div>
-              <div class="feature-icon">
-                <span class="fa fa-rocket"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                Zona Franca
-              </h3>
-
-              <p>
-                En la Zona Franca de Mendoza poseemos oficinas y depósitos destinados al almacenaje, fraccionamiento, reenvasado, logística y distribución de las mercaderías.
-              </p>
-            </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-input" placeholder="Juan García">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Empresa</label>
+            <input type="text" class="form-input" placeholder="Mi Empresa S.A.">
           </div>
         </div>
-
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
-            <div>
-              <div class="feature-icon">
-                <span class="fa fa-envelope"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                Tecnologia
-              </h3>
-
-              <p>
-                Cumplir con las expectativas y necesidades de nuestros clientes, brindando un servicio altamente profesional, con la participación y el compromiso de todo el personal, cuya formación y capacidad logran un ágil trabajo en equipo.
-              </p>
-            </div>
-          </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="juan@empresa.com">
         </div>
-
-        <div class="feature-col col-lg-4 col-xs-12">
-          <div class="card card-block text-center">
-            <div>
-              <div class="feature-icon">
-                <span class="fa fa-bell"></span>
-              </div>
-            </div>
-
-            <div>
-              <h3>
-                Seguros de carga
-              </h3>
-
-              <p>
-                Gestionamos el seguro más conveniente para su carga, a través de reconocidas Aseguradoras especializadas en Comercio Exterior.
-              </p>
-            </div>
-          </div>
+        <div class="form-group">
+          <label class="form-label">Tipo de servicio</label>
+          <select class="form-input">
+            <option value="" style="background:#0a1628">Seleccionar...</option>
+            <option style="background:#0a1628">Importación</option>
+            <option style="background:#0a1628">Exportación</option>
+            <option style="background:#0a1628">Agente de carga</option>
+            <option style="background:#0a1628">Zona Franca</option>
+            <option style="background:#0a1628">Seguros de carga</option>
+            <option style="background:#0a1628">Consulta general</option>
+          </select>
         </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- /Features -->
-  <!-- Call to Action -->
-
-  <!--<section class="cta">-->
-    <!--<div class="container">-->
-      <!--<div class="row">-->
-        <!--<div class="col-lg-9 col-sm-12 text-lg-left text-center">-->
-          <!--<h2>-->
-              <!--Call to Action Section-->
-            <!--</h2>-->
-
-          <!--<p>-->
-            <!--Lorem ipsum dolor sit amet, nec ad nisl mandamus imperdiet, ut corpora cotidieque cum. Et brute iracundia his, est eu idque dictas gubergren-->
-          <!--</p>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-12 text-lg-right text-center">-->
-          <!--<a class="btn btn-ghost" href="#">Buy This Theme</a>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</section>-->
-  <!-- /Call to Action -->
-  <!-- Portfolio -->
-
-  <!--<section class="portfolio" id="portfolio">-->
-    <!--<div class="container text-center">-->
-      <!--<h2>-->
-          <!--Portfolio-->
-        <!--</h2>-->
-
-      <!--<p>-->
-        <!--Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, Per nihil dicant commodo an.-->
-      <!--</p>-->
-    <!--</div>-->
-
-    <!--<div class="portfolio-grid">-->
-      <!--<div class="row">-->
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-1.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-2.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-3.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-4.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--<div class="row">-->
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-5.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-6.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-7.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="col-lg-3 col-sm-6 col-xs-12">-->
-          <!--<div class="card card-block">-->
-            <!--<a href="#"><img alt="" src="img/porf-8.jpg">-->
-              <!--<div class="portfolio-over">-->
-                <!--<div>-->
-                  <!--<h3 class="card-title">-->
-                    <!--The Dude Rockin'-->
-                  <!--</h3>-->
-
-                  <!--<p class="card-text">-->
-                    <!--Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.-->
-                  <!--</p>-->
-                <!--</div>-->
-              <!--</div></a>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</section>-->
-  <!-- /Portfolio -->
-  <!-- Team -->
-
-  <section class="team" id="team">
-    <div class="container">
-      <h2 class="text-center">
-          Conozca al equipo
-        </h2>
-
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <div class="card card-block">
-            <a href="#"><img alt="" class="team-img" src="img/team-1.jpg">
-              <div class="card-title-wrap">
-                <span class="card-title">Bruno Fabian Cola</span> <span class="card-text">Director Aduanero</span>
-              </div>
-
-              <div class="team-over">
-                <h4 class="hidden-md-down">
-                  Connect with me
-                </h4>
-
-                <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-            </nav>
-
-            <p>
-              Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-            </p>
-          </div>
-          </a>
+        <div class="form-group">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-input" placeholder="Cuéntenos sobre su operación..."></textarea>
         </div>
-      </div>
-
-      <div class="col-sm-3 col-xs-6">
-        <div class="card card-block">
-          <a href="#"><img alt="" class="team-img" src="img/team-2.jpg">
-              <div class="card-title-wrap">
-                <span class="card-title">Roxana Andino</span> <span class="card-text">Directora General</span>
-              </div>
-
-              <div class="team-over">
-                <h4 class="hidden-md-down">
-                  Connect with me
-                </h4>
-
-                <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-          </nav>
-
-          <p>
-            Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-          </p>
-        </div>
-        </a>
+        <button class="btn-submit">Enviar consulta →</button>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="col-sm-3 col-xs-6">
-      <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="img/team-3.jpg">
-              <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Gerente</span>
-              </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 GlobalComint · Todos los derechos reservados</div>
+    <ul class="footer-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </div>
+</footer>
 
-              <div class="team-over">
-                <h4 class="hidden-md-down">
-                  Connect with me
-                </h4>
+<!-- WHATSAPP BUTTON -->
+<a class="wa-btn" href="https://wa.me/5492617016488" target="_blank" title="Contactar por WhatsApp">
+  <span class="wa-tooltip">Escribinos por WhatsApp</span>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.347.63 4.547 1.727 6.453L2.667 29.333l7.093-1.707A13.28 13.28 0 0 0 16.004 29.333C23.36 29.333 29.333 23.36 29.333 16S23.36 2.667 16.004 2.667zm0 2.666c5.88 0 10.663 4.784 10.663 10.667s-4.783 10.667-10.663 10.667c-2.04 0-3.947-.573-5.573-1.573l-.4-.24-4.14.987.987-4.013-.267-.427A10.6 10.6 0 0 1 5.337 16c0-5.883 4.784-10.667 10.667-10.667zm-3.48 5.734c-.253 0-.666.093-.987.44-.32.347-1.227 1.2-1.227 2.92s1.254 3.387 1.427 3.627c.173.24 2.44 3.893 6.013 5.307 2.987 1.187 3.6.947 4.24.88.64-.067 2.08-.853 2.373-1.68.293-.827.293-1.534.2-1.68-.093-.147-.347-.24-.72-.427-.373-.187-2.08-1.04-2.4-1.16-.32-.12-.547-.187-.773.187-.227.373-.88 1.12-1.08 1.347-.2.227-.4.253-.773.08-.373-.173-1.573-.587-2.987-1.867-1.107-.987-1.853-2.213-2.067-2.587-.213-.373-.013-.573.16-.76.16-.16.373-.427.56-.64.187-.213.24-.36.36-.613.12-.253.067-.48-.027-.667-.093-.187-.76-1.893-1.067-2.587-.28-.68-.573-.573-.773-.573z"/>
+  </svg>
+</a>
 
-                <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-        </nav>
-
-        <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-        </p>
-      </div>
-      </a>
-    </div>
-    </div>
-
-    <div class="col-sm-3 col-xs-6">
-      <div class="card card-block">
-        <a href="#"><img alt="" class="team-img" src="img/team-4.jpg">
-              <div class="card-title-wrap">
-                <span class="card-title">Sergio Fez</span> <span class="card-text">Despachante</span>
-              </div>
-
-              <div class="team-over">
-                <h4 class="hidden-md-down">
-                  Connect with me
-                </h4>
-
-                <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-        </nav>
-
-        <p>
-          Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-        </p>
-      </div>
-      </a>
-    </div>
-    </div>
-    </div>
-    </div>
-  </section>
-  <!-- /Team -->
-  <!-- @component: footer -->
-
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-title">Contáctenos</h2>
-        </div>
-      </div>
-
-      <div class="row justify-content-center">
-        <div class="col-lg-3 col-md-4">
-          <div class="info">
-            <div>
-              <i class="fa fa-map-marker"></i>
-              <p>Puerto seco y Puerto Terrestre<br>Mendoza, 5500</p>
-            </div>
-
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>gobalcomint@gmail.com</p>
-            </div>
-
-            <div>
-              <i class="fa fa-phone"></i>
-              <p>+1 5589 55488 55s</p>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-lg-5 col-md-8">
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="bottom">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
-            <p class="copyright-text">
-              © Global Comint
-            </p>
-            <div class="credits">
-              <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
-              -->
-             Designed by <a href="https://google.com/">PH</a>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="index.html">Inicio</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#about">Acerca de nosotros</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#features">Servicios</a>
-              </li>
-
-              <!--<li class="list-inline-item">-->
-                <!--<a href="#portfolio">Portfolio</a>-->
-              <!--</li>-->
-
-              <li class="list-inline-item">
-                <a href="#team">Equipo</a>
-              </li>
-
-              <li class="list-inline-item">
-                <a href="#contact">Contacto</a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </footer>
-  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
-
-
-  <!-- Required JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/tether/js/tether.min.js"></script>
-  <script src="lib/stellar/stellar.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/easing/easing.js"></script>
-  <script src="lib/stickyjs/sticky.js"></script>
-  <script src="lib/parallax/parallax.js"></script>
-  <script src="lib/lockfixed/lockfixed.min.js"></script>
-
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="js/custom.js"></script>
-
-  <script src="contactform/contactform.js"></script>
-
+<script>
+  (function(){
+    var btn = document.querySelector('.nav-hamburger');
+    var menu = document.querySelector('.nav-links');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>

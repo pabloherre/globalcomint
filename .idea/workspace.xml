@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AIDiffSettings">
+    <option name="showAIDiff" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fb5c2986-cccb-4271-8256-269d6b24ad08" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/img/og-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactform/contactform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactform/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/scss-files.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/comercio.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/comercio2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/gadgets.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo-nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/parallax-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/porf-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/team-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/team-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/team-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/team-4.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/counterup/counterup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/easing/easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/easing/easing.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jquery/jquery-migrate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lockfixed/lockfixed.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/parallax/parallax.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/stellar/stellar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/stickyjs/sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/superfish/hoverIntent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/superfish/superfish.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/superfish/superfish.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-arrows-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-arrows-dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-arrows.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-arrows.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-basic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether-theme-basic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/css/tether.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/js/tether.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tether/js/tether.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/waypoints/waypoints.min.js" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="18" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -40,8 +110,25 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pabloherre&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pabloherre/globalcomint.git&quot;,
+    &quot;accountId&quot;: &quot;c255afe6-5f2b-40ec-9e9c-feffd7956df4&quot;
+  }
+}</component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -56,16 +143,24 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1602" />
     <option name="y" value="357" />
     <option name="width" value="1590" />
     <option name="height" value="897" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="3CtomRhDgwU7NucrNuN8hqXiMIN" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -95,28 +190,42 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/AG2/globalcomint",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/img" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.23567.141" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -209,29 +318,14 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
